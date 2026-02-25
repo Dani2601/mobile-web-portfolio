@@ -1,5 +1,6 @@
 import Button from "../component/button";
 import CardTemplate from "../component/card-template";
+import PhoneContent from "../component/phone-content";
 import PhoneFrame from "../component/phone-frame";
 import { template } from "../constant/color";
 import { Smartphone, Globe, ArrowRight } from "lucide-react";
@@ -64,9 +65,7 @@ export default function Landing() {
       </div>
       <div className=" w-[50%] flex flex-col justify-center items-center">
         <PhoneFrame>
-          <div className="p-4">
-            <p className="text-gray-700">This is inside the phone frame.</p>
-          </div>
+          <PhoneContent />
         </PhoneFrame>
       </div>
     </div>

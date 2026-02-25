@@ -7,17 +7,23 @@ interface PhoneFrameProps {
 
 export default function PhoneFrame({ children }: PhoneFrameProps) {
   return (
-    <div className="flex justify-center mt-10 relative w-[380px] h-[800px]">
-      {/* Phone image */}
-      <img src={phoneImg} alt="Phone Frame" className="absolute top-0 left-0 w-full h-full" />
-
-      {/* App screen content */}
-      <div className="absolute top-[75px] left-[50px] w-[355px] h-[650px] overflow-y-auto"
-      style={{
-        scrollbarWidth: "none",
-      }}>
-        {children}
+    <div className="relative w-[380px] h-[800px] mx-auto mt-10">
+      {/* Screen */}
+      <div className="absolute inset-[20px] rounded-[40px] overflow-hidden z-10">
+        <div
+          className="h-full overflow-y-auto"
+          style={{ scrollbarWidth: "none" }}
+        >
+          {children}
+        </div>
       </div>
+
+      {/* Phone case (ALWAYS ON TOP) */}
+      <img
+        src={phoneImg}
+        alt="Phone Frame"
+        className="absolute inset-0 w-full h-full z-20 pointer-events-none"
+      />
     </div>
   );
 }
