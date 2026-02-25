@@ -7,7 +7,7 @@ interface PhoneFrameProps {
 
 export default function PhoneFrame({ children }: PhoneFrameProps) {
   return (
-    <div className="relative w-[380px] h-[800px] mx-auto mt-10">
+    <div className="relative w-[420px] h-[800px] mx-auto mt-10">
       {/* Screen */}
       <div className="absolute inset-[20px] rounded-[40px] overflow-hidden z-10">
         <div
