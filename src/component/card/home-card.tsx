@@ -16,10 +16,7 @@ export default function HomeCard({
   description,
 }: HomeCardProps) {
   return (
-    <div
-      className="bg-white flex items-center 
-            justify-center rounded-2xl border shadow-sm p-4 gap-3"
-    >
+    <div className="bg-white flex items-center justify-center rounded-2xl border shadow-sm p-4 gap-3">
       <div style={{ background: bg }} className="p-2 rounded-xl">
         <Icon className="w-6 h-6" style={{ color }} />
       </div>

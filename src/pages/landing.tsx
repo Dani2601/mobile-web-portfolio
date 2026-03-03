@@ -2,27 +2,11 @@ import Button from "../component/button";
 import HomeCard from "../component/card/home-card";
 import PhoneContent from "../component/phone-content";
 import PhoneFrame from "../component/phone-frame";
+import { cards } from "../constant/card-info";
 import { template } from "../constant/color";
-import { Smartphone, Globe, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Landing() {
-  const cards = [
-    {
-      icon: Smartphone,
-      color: template.primary,
-      bg: template.primaryBackground,
-      title: "Mobile",
-      description: "iOS & Android",
-    },
-    {
-      icon: Globe,
-      color: template.secondary,
-      bg: template.secondaryBackground,
-      title: "Web",
-      description: "React & Next.js",
-    },
-  ];
-
   return (
     <div className="flex flex-row justify-between min-h-screen">
       <div className="w-[50%] flex flex-col justify-center items-start p-12 space-y-9">
@@ -66,7 +50,7 @@ export default function Landing() {
           icon={<ArrowRight className="w-4 h-4" color="white" />}
         />
       </div>
-      <div className=" w-[50%] flex flex-col justify-center items-center">
+      <div className="w-[50%] flex flex-col justify-center items-center">
         <PhoneFrame>
           <PhoneContent />
         </PhoneFrame>

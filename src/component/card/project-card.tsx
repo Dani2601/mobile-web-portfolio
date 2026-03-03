@@ -16,7 +16,7 @@ export default function ProjectCard({
   language,
 }: ProjectCardProps) {
   return (
-    <div className="bg-white flex flex-col rounded-2xl border shadow-sm gap-4">
+    <div className="bg-white flex flex-col rounded-2xl border shadow-sm gap-4 overflow-hidden">
       <div className="w-full h-[180px]">
         <img
           src={image}
