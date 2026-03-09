@@ -13,15 +13,15 @@ export default function TextBackground({
 }: TextBackgroundProps) {
   return (
     <div
-      className="inline-block px-2 pb-[2px] pt-[1px] rounded-full"
+      className={`inline-block px-2 py-[3px] rounded-full`}
       style={{ backgroundColor: background }}
     >
-      <span
+      <p
         className={`text-xs font-semibold ${className}`}
         style={{ color: textColor }}
       >
         {label}
-      </span>
+      </p>
     </div>
   );
 }

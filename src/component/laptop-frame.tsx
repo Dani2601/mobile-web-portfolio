@@ -1,15 +1,15 @@
 import { type ReactNode } from "react";
-import phoneImg from "../assets/iphone-15.png";
+import laptopImg from "../assets/macbook.png";
 
-interface PhoneFrameProps {
+interface LaptopFrameProps {
   children: ReactNode;
 }
 
-export default function PhoneFrame({ children }: PhoneFrameProps) {
+export default function LaptopFrame({ children }: LaptopFrameProps) {
   return (
-    <div className="relative w-[420px] h-[800px] mx-auto mt-10">
+    <div className="relative w-[840px] h-[500px] mx-auto">
       {/* Screen */}
-      <div className="absolute inset-[20px] rounded-[40px] overflow-hidden z-10">
+      <div className="absolute inset-x-[75px] inset-y-[15px] pb-[40px] rounded-[20px] overflow-hidden z-10">
         <div
           className="h-full overflow-y-auto"
           style={{ scrollbarWidth: "none" }}
@@ -18,9 +18,9 @@ export default function PhoneFrame({ children }: PhoneFrameProps) {
         </div>
       </div>
 
-      {/* Phone case (ALWAYS ON TOP) */}
+      {/* Laptop case (ALWAYS ON TOP) */}
       <img
-        src={phoneImg}
+        src={laptopImg}
         alt="Phone Frame"
         className="absolute inset-0 w-full h-full z-20 pointer-events-none"
       />

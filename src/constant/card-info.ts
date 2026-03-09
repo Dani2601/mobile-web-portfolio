@@ -1,7 +1,16 @@
 import { Globe, Smartphone } from "lucide-react";
 import { template } from "./color";
+import type { PlatformType } from "../context/PlatformContext";
 
-export const cards = [
+type CardInfo = {
+  icon: any;
+  color: string;
+  bg: string;
+  title: PlatformType;
+  description: string;
+};
+
+export const cards: CardInfo[] = [
   {
     icon: Smartphone,
     color: template.primary,

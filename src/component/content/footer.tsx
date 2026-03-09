@@ -1,6 +1,11 @@
+import { usePlatform } from "../../context/PlatformContext";
+
 type FooterProps = {};
 
 export default function Footer({}: FooterProps) {
+  const { selected } = usePlatform();
+  const isWeb = selected === "Web";
+
   return (
     <div className="bg-[#f8fafb] py-10 border-t-2">
       <div className="mx-auto px-6 flex flex-col items-center text-center gap-6">

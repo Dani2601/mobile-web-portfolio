@@ -1,4 +1,5 @@
 import { template } from "../../constant/color";
+import { usePlatform } from "../../context/PlatformContext";
 import Button from "../button";
 import TextBackground from "../text-background";
 
@@ -15,8 +16,13 @@ export default function ProjectCard({
   description,
   language,
 }: ProjectCardProps) {
+  const { selected } = usePlatform();
+  const isWeb = selected === "Web";
+
   return (
-    <div className="bg-white flex flex-col rounded-2xl border shadow-sm gap-4 overflow-hidden">
+    <div className="bg-white flex flex-col h-full rounded-2xl border shadow-sm overflow-hidden">
+      
+      {/* Image */}
       <div className="w-full h-[180px]">
         <img
           src={image}
@@ -24,24 +30,41 @@ export default function ProjectCard({
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="flex flex-row flex-wrap px-6 gap-2">
-        <h3 className="text-lg font-bold">{title}</h3>
-        <p className="text-xs text-[#64748B] mb-2">{description}</p>
-        {language.map((lang, index) => (
-          <TextBackground
-            key={index}
-            label={lang}
-            textColor="black"
-            background="#f1f5f9"
-            className="!text-[10px]"
+
+      {/* Content */}
+      <div className="flex flex-col flex-1 px-6 py-4 gap-3">
+        
+        <h3 className={`${isWeb ? "text-sm" : "text-lg"} font-bold`}>
+          {title}
+        </h3>
+
+        <p className="text-xs text-[#64748B]">
+          {description}
+        </p>
+
+        {/* Languages */}
+        <div className="flex flex-wrap gap-2">
+          {language.map((lang, index) => (
+            <TextBackground
+              key={index}
+              label={lang}
+              textColor="black"
+              background="#f1f5f9"
+              className={`${isWeb ? "!text-[9px]" : "!text-[10px]"}`}
+            />
+          ))}
+        </div>
+
+        {/* Push button to bottom */}
+        <div className="mt-auto">
+          <Button
+            label="View Project"
+            className={`${isWeb ? "!h-8" : ""} !min-h-8 !py-2 !text-xs !h-10 !gap-3 w-full`}
+            bgColor={template.primary}
           />
-        ))}
+        </div>
+
       </div>
-      <Button
-        label={"View Project"}
-        className="!min-h-8 !py-2 !text-xs !h-10 !gap-3 mx-6 mb-6"
-        bgColor={template.primary}
-      />
     </div>
   );
 }

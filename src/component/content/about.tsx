@@ -1,14 +1,21 @@
 import { template } from "../../constant/color";
 import { expertiseInfo2 } from "../../constant/expertise";
+import { usePlatform } from "../../context/PlatformContext";
 
 type AboutProps = {};
 
 export default function About({}: AboutProps) {
+  const { selected } = usePlatform();
+  const isWeb = selected === "Web";
+
   return (
-    <div className="py-12 bg-[#fbfcfd] px-8">
-      <div className="bg-white rounded-3xl p-6 shadow-sm border-2">
-        <h2 className="text-2xl font-bold text-center mb-6">About Alex</h2>
-        <div className="text-sm text-[#64748B] leading-[1.7] space-y-4">
+    <div className={`${isWeb ? "flex flex-row" : ""} py-12 bg-[#fbfcfd] px-8`}>
+      <div className={`${isWeb ? "w-[50%]" : "hidden"}`}>
+        <p>sasasa</p>
+      </div>
+      <div className={`${isWeb ? "w-[50%]" : ""} bg-white rounded-3xl p-6 shadow-sm border-2`}>
+        <h2 className={`${isWeb ? "text-xl" : "text-2xl"} font-bold text-center mb-6`}>About Alex</h2>
+        <div className={`${isWeb ? "text-xs space-y-2" : "text-sm space-y-4"} text-[#64748B] leading-[1.7]`}>
           <p className="">
             I'm a Senior React Native Engineer with a passion for building
             seamless, high-performance mobile applications that feel truly
@@ -25,7 +32,7 @@ export default function About({}: AboutProps) {
             the final product.
           </p>
         </div>
-        <div className="mt-6 pt-8 border-t grid grid-cols-2 gap-3 bg-[#fbfcfd]">
+        <div className={`${isWeb ? "hidden" : ""} mt-6 pt-8 border-t grid grid-cols-2 gap-3 bg-[#fbfcfd]`}>
           {expertiseInfo2.map((item, index) => (
             <div
               key={index}

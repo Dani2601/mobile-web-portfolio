@@ -5,8 +5,13 @@ import PhoneFrame from "../component/phone-frame";
 import { cards } from "../constant/card-info";
 import { template } from "../constant/color";
 import { ArrowRight } from "lucide-react";
+import LaptopFrame from "../component/laptop-frame";
+import { usePlatform } from "../context/PlatformContext";
+import LaptopContent from "../component/laptop-content";
 
 export default function Landing() {
+  const { selected, setSelected } = usePlatform();
+
   return (
     <div className="flex flex-row justify-between min-h-screen">
       <div className="w-[50%] flex flex-col justify-center items-start p-12 space-y-9">
@@ -41,6 +46,7 @@ export default function Landing() {
               bg={card.bg}
               title={card.title}
               description={card.description}
+              handleClick={(e) => setSelected(e)}
             />
           ))}
         </div>
@@ -51,9 +57,15 @@ export default function Landing() {
         />
       </div>
       <div className="w-[50%] flex flex-col justify-center items-center">
-        <PhoneFrame>
-          <PhoneContent />
-        </PhoneFrame>
+        {selected === "Mobile" ? (
+          <PhoneFrame>
+            <PhoneContent />
+          </PhoneFrame>
+        ) : (
+          <LaptopFrame>
+            <LaptopContent />
+          </LaptopFrame>
+        )}
       </div>
     </div>
   );
