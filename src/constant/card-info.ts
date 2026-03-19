@@ -1,5 +1,4 @@
 import { Globe, Smartphone } from "lucide-react";
-import { template } from "./color";
 import type { PlatformType } from "../context/PlatformContext";
 
 type CardInfo = {
@@ -13,15 +12,15 @@ type CardInfo = {
 export const cards: CardInfo[] = [
   {
     icon: Smartphone,
-    color: template.primary,
-    bg: template.primaryBackground,
+    color: "text-primary",
+    bg: "bg-surface",
     title: "Mobile",
     description: "iOS & Android",
   },
   {
     icon: Globe,
-    color: template.secondary,
-    bg: template.secondaryBackground,
+    color: "text-secondary",
+    bg: "bg-surface-muted",
     title: "Web",
     description: "React & Next.js",
   },

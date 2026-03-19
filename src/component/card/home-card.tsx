@@ -1,13 +1,13 @@
 import { type LucideIcon } from "lucide-react";
-import type { Type } from "../../pages/landing";
+import type { PlatformType } from "../../context/PlatformContext";
 
 type HomeCardProps = {
   icon: LucideIcon;
   color: string;
   bg: string;
-  title: Type;
+  title: PlatformType;
   description: string;
-  handleClick: (title: Type) => void;
+  handleClick: (title: PlatformType) => void;
 };
 
 export default function HomeCard({
@@ -19,14 +19,17 @@ export default function HomeCard({
   handleClick,
 }: HomeCardProps) {
   return (
-    <div className="bg-white flex items-center justify-center rounded-2xl border shadow-sm p-4 gap-3 cursor-pointer"
-      onClick={() => handleClick(title)}>
-      <div style={{ background: bg }} className="p-2 rounded-xl">
-        <Icon className="w-6 h-6" style={{ color }} />
+    <div
+      className="bg-white flex items-center justify-center rounded-2xl border border-surface shadow-sm p-4 gap-3 cursor-pointer transition hover:shadow-md"
+      onClick={() => handleClick(title)}
+    >
+      <div className={`p-2 rounded-xl ${bg}`}>
+        <Icon className={`w-6 h-6 ${color}`} />
       </div>
+
       <div>
-        <p className="font-bold">{title}</p>
-        <p className="text-xs">{description}</p>
+        <p className="font-bold text-text">{title}</p>
+        <p className="text-xs text-text-muted">{description}</p>
       </div>
     </div>
   );
