@@ -75,6 +75,24 @@ export default function Contact({}: ContactProps) {
             </div>
             <p className="text-xs font-medium">+63 912 345 6789</p>
           </div>
+          <div className="flex items-center gap-3">
+            <div className="bg-[#eaeffd] p-2 rounded-full">
+              <Mail className="w-5 h-5" color={template.primary} />
+            </div>
+            <p className="text-xs font-medium">hello@alexrivera.dev</p>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="bg-[#eaeffd] p-2 rounded-full">
+              <Smartphone className="w-5 h-5" color={template.primary} />
+            </div>
+            <p className="text-xs font-medium">+63 912 345 6789</p>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="bg-[#eaeffd] p-2 rounded-full">
+              <Smartphone className="w-5 h-5" color={template.primary} />
+            </div>
+            <p className="text-xs font-medium">+63 912 345 6789</p>
+          </div>
         </div>
       </div>
     </div>
